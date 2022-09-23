@@ -2,12 +2,16 @@ import { StyleSheet } from "react-native";
 import colors from "../constants/Colors";
 
 import loginStyles from "./login"
+import headerStyles from "./header"
 
 const defaultStyles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: "center",
         alignItems: "center"
+    },
+    containerTop: {
+        justifyContent: "flex-start"
     },
     horizontalView: {
         display: "flex",
@@ -25,4 +29,4 @@ const defaultStyles = StyleSheet.create({
 
 
 
-export { defaultStyles, loginStyles };
+export { defaultStyles, loginStyles, headerStyles };

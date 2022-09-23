@@ -1,25 +1,18 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { defaultStyles, loginStyles } from '../styles/styles';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useNavigation } from '@react-navigation/native';
+import { View } from 'react-native';
+import { defaultStyles } from '../styles/styles';
+import { SafeAreaView } from 'react-native';
+
+import { Header } from '../components/Header';
+import { Filters } from '../components/Filters';
 
 export const HomeScreen = () => {
 
-    const navigation = useNavigation();
-
-    const logOut = async () => {
-        await AsyncStorage.removeItem("accessToken");
-        await AsyncStorage.removeItem("userName");
-        await AsyncStorage.removeItem("userEmail");
-        navigation.navigate("Login");
-    }
 
     return (
-        <View style={defaultStyles.container}>
-            <TouchableOpacity onPress={logOut} style={loginStyles.button}>
-                <Text style={loginStyles.buttonText}>LogOut</Text>
-            </TouchableOpacity>
-        </View>
+        <SafeAreaView style={[defaultStyles.container, defaultStyles.containerTop]}>
+            <Header />
+            <Filters />
+        </SafeAreaView>
     );
 }
