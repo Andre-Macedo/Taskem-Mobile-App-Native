@@ -8,9 +8,9 @@ const instance = axios.create({
     timeout: 30000
 });
 
-export const executeRequest = (endpoint: string, method: Method, body: any) => {
+export const executeRequest = async (endpoint: string, method: Method, body?: any) => {
 
-    const accessToken = AsyncStorage.getItem('accessToken');
+    const accessToken = await AsyncStorage.getItem('accessToken');
 
     let headers: any = { "Content-Type": "application/json" };
     if (accessToken) {
