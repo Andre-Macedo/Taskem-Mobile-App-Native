@@ -60,7 +60,7 @@ export const Filters = () => {
                             }}
                         />}
                     </View>
-                    <View style={filterStyles.filtrosCampos}>
+                    <View style={filterStyles.filtersFields}>
                         <Text style={filterStyles.label}>Status:</Text>
                         <Picker
                             style={[defaultStyles.inputSelect, { borderColor: "#7C7786", borderWidth: 5 }]}
